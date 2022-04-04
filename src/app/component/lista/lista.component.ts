@@ -9,6 +9,7 @@ export class ListaComponent implements OnInit {
   //Dados
   @Input() rows!: any[];
   @Input() columns!: any[];
+  @Input() buttons!: any[];
 
   // Props
   @Input() canDelete: boolean = true;

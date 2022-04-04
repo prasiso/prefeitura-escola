@@ -26,7 +26,7 @@ export class TurmaFormularioComponent implements OnInit {
         {
           text: 'Voltar',
           color: 'warning',
-          link: '/escola',
+          link: '/turma-listagem/0',
         },
       ];
   }

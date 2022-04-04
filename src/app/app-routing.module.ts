@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'escola/:id', component: FormComponent },
 
   //Turma
-  { path: 'turma', component: TurmaListagemComponent },
+  { path: 'turma-listagem/:id', component: TurmaListagemComponent },
   // { path: 'turma/:id', component: FormComponent },
 ];
 

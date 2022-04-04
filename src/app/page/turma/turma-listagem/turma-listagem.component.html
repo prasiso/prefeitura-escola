@@ -22,6 +22,7 @@
     </ng-template>
     <div class="card">
         <div class="card-body">
+            <app-select-escola [(dado)]="escola" (change)="loadTurma(escola)"></app-select-escola>
             <app-lista 
                 [rows]="rows" 
                 [canLista]="false" 

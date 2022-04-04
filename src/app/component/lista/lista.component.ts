@@ -15,6 +15,7 @@ export class ListaComponent implements OnInit {
   // Props
   @Input() canDelete: boolean = true;
   @Input() canEditar: boolean = true;
+  @Input() canListagem: boolean = true;
   @Input() canVer: boolean = true;
   @Input() canLista: boolean = true;
 

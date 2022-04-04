@@ -28,12 +28,12 @@ export class ListagemComponent implements OnInit {
     this.route.navigate([`/escola/${log.id}`])
 
   }
-  ngOnInit(): void {
+  variaveis(){
     this.buttons = [
       {
         text: 'Adicionar',
         color: 'success',
-        link: 'escola/0',
+        link: '/escola/0',
       },
     ];
     this.bread = [
@@ -65,5 +65,8 @@ export class ListagemComponent implements OnInit {
         key: 'nome',
       },
     ];
+  }
+  ngOnInit(): void {
+    this.variaveis()
   }
 }

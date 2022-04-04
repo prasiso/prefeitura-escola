@@ -7,7 +7,7 @@ import { FormComponent } from './page/escola/form/form.component';
 
 //Turma
 import { TurmaListagemComponent } from '../app/page/turma/turma-listagem/turma-listagem.component';
-// import { FormComponent } from './page/escola/form/form.component';
+import { TurmaFormularioComponent } from './page/turma/turma-formulario/turma-formulario.component';
 
 const routes: Routes = [
   //Escola
@@ -16,7 +16,7 @@ const routes: Routes = [
 
   //Turma
   { path: 'turma-listagem/:id', component: TurmaListagemComponent },
-  // { path: 'turma/:id', component: FormComponent },
+  { path: 'turma-formulario/:id', component: TurmaFormularioComponent },
 ];
 
 @NgModule({

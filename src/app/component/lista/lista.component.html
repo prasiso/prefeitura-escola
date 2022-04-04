@@ -1,4 +1,4 @@
-<div class="table-responsive ">
+<div class="table-responsive table table-striped table-hover ">
     <table class="table">
         <thead>
             <tr>
@@ -9,11 +9,11 @@
         <tbody *ngIf="this.rows.length>0">
             <tr *ngFor="let row of rows">
                 <td *ngFor="let colum of columns">{{row[colum.key]}}</td>
-                <td class="d-flex justify-content-between" style="max-width: 120px">
-                    <button *ngIf="canVer" (click)="verFuncao(row)" class="mr-1 btn btn-success"><i class="bi bi-eye"></i></button>
-                    <button *ngIf="canEditar" (click)="editarFuncao(row)" class="mr-1 btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                    <button *ngIf="canLista" (click)="listaFuncao(row)" class="mr-1 btn btn-warning"><i class="bi bi-arrow-down-circle"></i></button>
-                    <button *ngIf="canDelete" (click)="deleteFuncao(row)"  class="mr-1 btn btn-danger"><i class="bi bi-trash2"></i></button>
+                <td class="justify-content-between" style="max-width: 120px">
+                    <button *ngIf="canVer" (click)="verFuncao(row)" class="m-1 btn btn-sm btn-success"><i class="bi bi-eye"></i></button>
+                    <button *ngIf="canEditar" (click)="editarFuncao(row)" class="m-1 btn-sm btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                    <button *ngIf="canLista" (click)="listaFuncao(row)" class="m-1 btn btn-sm btn-warning"><i class="bi bi-arrow-down-circle"></i></button>
+                    <button *ngIf="canDelete" (click)="deleteFuncao(row)"  class="m-1 btn-sm btn btn-danger"><i class="bi bi-trash2"></i></button>
                 </td>
             </tr>
         </tbody>

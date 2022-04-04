@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'prefeituraEscola';
-  constructor() {}
+  constructor(private route: Router) {}
   rows: any[] = [];
   bread: any[] = [];
   columns: any[] = [];
@@ -25,41 +25,6 @@ export class AppComponent implements OnInit {
     console.log(log);
   }
   ngOnInit(): void {
-    this.buttons = [
-      {
-        text: 'Adicionar',
-        color: 'success',
-        link: 'escola/0'
-      },
-    ];
-    this.bread=[
-      {
-        text:"Escola"
-      },
-      {
-        text:"Listagem",
-        color: "gray"
-      },
-    ]
-    this.rows = [
-      {
-        id: 1,
-        nome: 'Kelwin de Souza',
-      },
-      {
-        id: 2,
-        nome: 'Patricia de Souza',
-      },
-    ];
-    this.columns = [
-      {
-        label: 'Identificador',
-        key: 'id',
-      },
-      {
-        label: 'Nome',
-        key: 'nome',
-      },
-    ];
+    this.route.navigate([`/escola`])
   }
 }

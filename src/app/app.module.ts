@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { ListaComponent } from './component/lista/lista.component';
 import { SubHeaderComponent } from './component/sub-header/sub-header.component';
+import { ListagemComponent } from './page/escola/listagem/listagem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ListaComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
+    ListagemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<div class="container">
+    <app-sub-header [breadcrumbs]="bread"></app-sub-header>
+    <div class="card">
+        <div class="card-body">
+            <app-lista 
+                [rows]="rows" 
+                [columns]="columns" 
+                [buttons]="buttons" 
+                (ver)="verForm($event)" 
+                (delete)="deleteForm($event)" 
+                (editar)="editarForm($event)" 
+                (lista)="listaForm($event)"
+            ></app-lista>
+        </div>
+    </div>
+</div>

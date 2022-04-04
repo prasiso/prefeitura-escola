@@ -1,46 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-escola-listagem',
   templateUrl: './listagem.component.html',
-  styleUrls: ['./listagem.component.css']
+  styleUrls: ['./listagem.component.css'],
 })
 export class ListagemComponent implements OnInit {
-
-  constructor() { }
+  constructor(private modalService: NgbModal, private route: Router,) {}
+  closeResult: string = '';
   rows: any[] = [];
+  dados: any = {};
   bread: any[] = [];
   columns: any[] = [];
   buttons: any[] = [];
-  verForm(log: any) {
-    console.log(log);
+  verForm(log: any, content: any = undefined ) { 
+    this.dados = log
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size:'lg' })
   }
   deleteForm(log: any) {
     console.log(log);
   }
   listaForm(log: any) {
-    console.log(log);
+    this.route.navigate([`/turma-listagem/${log.id}`])
   }
   editarForm(log: any) {
-    console.log(log);
+    this.route.navigate([`/escola/${log.id}`])
+
   }
   ngOnInit(): void {
     this.buttons = [
       {
         text: 'Adicionar',
         color: 'success',
-        link: 'escola/0'
+        link: 'escola/0',
       },
     ];
-    this.bread=[
+    this.bread = [
       {
-        text:"Escola"
+        text: 'Escola',
       },
       {
-        text:"Listagem",
-        color: "gray"
+        text: 'Listagem',
+        color: 'gray',
       },
-    ]
+    ];
     this.rows = [
       {
         id: 1,
@@ -62,5 +66,4 @@ export class ListagemComponent implements OnInit {
       },
     ];
   }
-
 }

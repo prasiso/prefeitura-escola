@@ -7,18 +7,23 @@ import { MenuComponent } from './component/menu/menu.component';
 import { ListaComponent } from './component/lista/lista.component';
 import { SubHeaderComponent } from './component/sub-header/sub-header.component';
 import { ListagemComponent } from './page/escola/listagem/listagem.component';
-
+import { FormComponent } from './page/escola/form/form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ListaComponent,
     SubHeaderComponent,
-    ListagemComponent
+    ListagemComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

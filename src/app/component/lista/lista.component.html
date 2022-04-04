@@ -1,0 +1,25 @@
+<div class="table-responsive ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let column of columns">{{column.label}}</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="this.rows.length>0">
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let colum of columns">{{row[colum.key]}}</td>
+                <td class="d-flex justify-content-between" style="max-width: 120px">
+                    <button class="mr-1 btn btn-success"><i class="bi bi-eye"></i></button>
+                    <button class="mr-1 btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                    <button class="mr-1 btn btn-warning"><i class="bi bi-arrow-down-circle"></i></button>
+                    <button class="mr-1 btn btn-danger"><i class="bi bi-trash2"></i></button>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="this.rows.length==0">
+            <td>Não existe dados!</td>
+        </tbody>
+
+    </table>
+</div>

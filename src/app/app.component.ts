@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   title = 'prefeituraEscola';
   constructor() {}
   rows: any[] = [];
+  bread: any[] = [];
   columns: any[] = [];
   buttons: any[] = [];
   verForm(log: any) {
@@ -31,6 +32,15 @@ export class AppComponent implements OnInit {
         link: 'escola/0'
       },
     ];
+    this.bread=[
+      {
+        text:"Escola"
+      },
+      {
+        text:"Listagem",
+        color: "gray"
+      },
+    ]
     this.rows = [
       {
         id: 1,

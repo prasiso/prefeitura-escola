@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 //Escola
 import { ListagemComponent } from '../app/page/escola/listagem/listagem.component';
-import { FormComponent } from '../app/page/escola/form/form.component';
+import { FormComponent } from './page/escola/form/form.component';
 
 const routes: Routes = [
   //Escola

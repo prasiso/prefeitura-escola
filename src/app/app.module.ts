@@ -10,6 +10,7 @@ import { ListagemComponent } from './page/escola/listagem/listagem.component';
 import { FormComponent } from './page/escola/form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { TurmaListagemComponent } from './page/turma/turma-listagem/turma-listagem.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ListaComponent,
     SubHeaderComponent,
     ListagemComponent,
-    FormComponent
+    FormComponent,
+    TurmaListagemComponent
   ],
   imports: [
     BrowserModule,

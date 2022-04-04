@@ -1,4 +1,11 @@
 <app-menu></app-menu>
 <div class="container">
-    <app-lista [rows]="rows" [columns]="columns"></app-lista>
+    <app-lista 
+    [rows]="rows" 
+    [columns]="columns" 
+    (ver)="verForm($event)"
+    (delete)="deleteForm($event)"
+    (editar)="editarForm($event)"
+    (lista)="listaForm($event)"
+    ></app-lista>
 </div>

@@ -10,7 +10,18 @@ export class AppComponent implements OnInit {
   constructor() {}
   rows: any[] = []
   columns: any[] = []
-
+  verForm(log: any){
+    console.log(log)
+  }
+  deleteForm(log: any){
+    console.log(log)
+  }
+  listaForm(log: any){
+    console.log(log)
+  }
+  editarForm(log: any){
+    console.log(log)
+  }
   ngOnInit(): void {
     this.rows = [
       {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-lista',
@@ -6,10 +6,34 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.css'],
 })
 export class ListaComponent implements OnInit {
-  @Input() rows!: any[] 
-  @Input() columns!: any[] 
-  constructor() {}
-  ngOnInit(): void {
+  //Dados
+  @Input() rows!: any[];
+  @Input() columns!: any[];
 
+  // Props
+  @Input() canDelete: boolean = true;
+  @Input() canEditar: boolean = true;
+  @Input() canVer: boolean = true;
+  @Input() canLista: boolean = true;
+
+  //Funcoes
+  @Output() ver = new EventEmitter();
+  @Output() delete = new EventEmitter();
+  @Output() editar = new EventEmitter();
+  @Output() lista = new EventEmitter();
+
+  constructor() {}
+  verFuncao(log: any) {
+    this.ver.emit(log);
   }
+  deleteFuncao(log: any) {
+    this.delete.emit(log);
+  }
+  editarFuncao(log: any) {
+    this.editar.emit(log);
+  }
+  listaFuncao(log: any) {
+    this.lista.emit(log);
+  }
+  ngOnInit(): void {}
 }

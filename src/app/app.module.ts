@@ -11,6 +11,7 @@ import { FormComponent } from './page/escola/form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { TurmaListagemComponent } from './page/turma/turma-listagem/turma-listagem.component';
+import { SelectEscolaComponent } from './component/select-escola/select-escola.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { TurmaListagemComponent } from './page/turma/turma-listagem/turma-listag
     SubHeaderComponent,
     ListagemComponent,
     FormComponent,
-    TurmaListagemComponent
+    TurmaListagemComponent,
+    SelectEscolaComponent
   ],
   imports: [
     BrowserModule,

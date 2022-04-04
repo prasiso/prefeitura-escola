@@ -8,12 +8,15 @@ import { Router } from '@angular/router';
 })
 export class ListagemComponent implements OnInit {
   constructor(private modalService: NgbModal, private route: Router,) {}
+
   closeResult: string = '';
   rows: any[] = [];
   dados: any = {};
+  escola: number = 1;
   bread: any[] = [];
   columns: any[] = [];
   buttons: any[] = [];
+
   verForm(log: any, content: any = undefined ) { 
     this.dados = log
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size:'lg' })

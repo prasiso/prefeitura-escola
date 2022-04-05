@@ -82,6 +82,8 @@ export class TurmaListagemComponent implements OnInit {
   async ngOnInit() {
     const id = Number(this.rotaAtual.snapshot.paramMap.get('id'));
     this.escola = id;
-    this.loadTurma(id);
+    if(id!==0){
+      this.loadTurma(id);
+    }
   }
 }

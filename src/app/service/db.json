@@ -6,7 +6,7 @@
     },
     {
       "id": 2,
-      "nome": "Cruz credo"
+      "nome": "Escola Nova"
     }
   ],
   "turma": [
@@ -26,19 +26,14 @@
       "nome": "Turma A3"
     },
     {
+      "id": 4,
+      "nome": "Turma A4",
+      "idEscola": "1"
+    },
+    {
       "id": 5,
-      "idEscola": 2,
-      "nome": "Turma B1"
-    },
-    {
-      "id": 6,
-      "idEscola": 2,
-      "nome": "Turma B2"
-    },
-    {
-      "id": 7,
-      "idEscola": 2,
-      "nome": "Turma B3"
+      "nome": "Turma A5",
+      "idEscola": "1"
     }
   ]
 }

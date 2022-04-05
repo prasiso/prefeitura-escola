@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-lista',
@@ -25,7 +24,7 @@ export class ListaComponent implements OnInit {
   @Output() editar = new EventEmitter();
   @Output() lista = new EventEmitter();
 
-  constructor(private modalService: NgbModal) {}
+  constructor() {}
   verFuncao(log: any) {
     this.ver.emit(log);
   }

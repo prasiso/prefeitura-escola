@@ -10,14 +10,14 @@
                     <input disabled class="form-control" type="text" [(ngModel)]="dados.id" placeholder="Identificador">
                 </div>
                 <div class="col-3">
-                <app-select-escola  [(dado)]="escola"></app-select-escola>
+                <app-select-escola (change)="loadButtons(escola)" [canInativar]="this.opcao === 'E'?true:false"  [(dado)]="escola"></app-select-escola>
             </div>
                 <div class="col-{{this.opcao === 'E'?7:9}}">
                     <label>Nome</label>
                     <input class="form-control" type="text" [(ngModel)]="dados.nome" placeholder="Nome">
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-success btn-sm mt-4">{{opcao === 'E'?'Editar':'Salvar'}}</button>
+                    <button (click)="gravar(dados)" class="btn btn-success btn-sm mt-4">{{opcao === 'E'?'Editar':'Salvar'}}</button>
                 </div>
             </div>
         </div>

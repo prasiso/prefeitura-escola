@@ -20,7 +20,7 @@ export class TurmaListagemComponent implements OnInit {
   rows: any[] = [];
   rowsBackup: any[] = [];
   dados: any = {};
-  escola: number = 1;
+  escola: number = 0;
   columns: any[] = [
     {
       label: 'Identificador',
@@ -36,6 +36,9 @@ export class TurmaListagemComponent implements OnInit {
       text: 'Adicionar',
       color: 'success',
       link: '/turma-formulario/0',
+      query:{
+        idEscola: 0
+      }
     },
   ];
   bread: any[] = [
@@ -76,8 +79,10 @@ export class TurmaListagemComponent implements OnInit {
     this.route.navigate([`/turma-formulario/${log.id}`]);
   }
   async loadTurma(idEscola: number) {
+    
     const result = await this.serviceTurma.listAll(idEscola);
     this.rows = result;
+    this.buttons[0].query.idEscola = idEscola
   }
   async ngOnInit() {
     const id = Number(this.rotaAtual.snapshot.paramMap.get('id'));

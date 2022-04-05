@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row justify-content-end">
             <div *ngIf="this.buttons.length>0">
-                <button *ngFor="let button of buttons" [routerLink]="[button.link]" class="btn btn-{{button.color != undefined?button.color:'primary'}} btn-sm m-1">{{button.text}}</button>
+                <button *ngFor="let button of buttons" [routerLink]="[button.link]" [queryParams]="button.query" class="btn btn-{{button.color != undefined?button.color:'primary'}} btn-sm m-1">{{button.text}}</button>
             </div>
         </div>
     </div>

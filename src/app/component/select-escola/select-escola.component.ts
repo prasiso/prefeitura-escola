@@ -11,7 +11,7 @@ export class SelectEscolaComponent implements OnInit {
 
   escolas: any[] = [];
   dadoSelect: number = 0;
-  canInativar: boolean = false;
+  @Input() canInativar: boolean = false;
   @Output()
   dadoChange = new EventEmitter<any>();
   @Input() get dado() {

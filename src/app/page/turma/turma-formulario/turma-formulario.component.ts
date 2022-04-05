@@ -24,6 +24,7 @@ export class TurmaFormularioComponent implements OnInit {
       color: 'gray',
     },
   ];
+  escola: number = 0
   buttons: any[] = [
     {
       text: 'Voltar',

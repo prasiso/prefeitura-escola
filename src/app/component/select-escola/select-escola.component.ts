@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { EscolaService } from '../../service';
 
 @Component({
   selector: 'app-select-escola',
@@ -6,30 +7,29 @@ import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
   styleUrls: ['./select-escola.component.css'],
 })
 export class SelectEscolaComponent implements OnInit {
-  constructor() {}
+  constructor(private serviceEscola: EscolaService) {}
+
   escolas: any[] = [];
   dadoSelect: number = 0;
   canInativar: boolean = false;
   @Output()
   dadoChange = new EventEmitter<any>();
-  @Input() get dado(){
+  @Input() get dado() {
     return this.dadoSelect;
   }
   set dado(val) {
     this.dadoSelect = val;
     this.dadoChange.emit(val);
   }
-
+  async loadEscola() {
+    const results = await this.serviceEscola.listAll();
+    results.map((result: any) => {
+      result.text = result.nome;
+    });
+    debugger
+    this.escolas = results;
+  }
   ngOnInit(): void {
-    this.escolas = [
-      {
-        text: 'Sao Pedro Miguel',
-        id: 1,
-      },
-      {
-        text: 'Halley',
-        id: 2,
-      },
-    ];
+    this.loadEscola();
   }
 }

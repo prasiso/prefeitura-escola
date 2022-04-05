@@ -1,4 +1,13 @@
 {
-  "escola": [],
+  "escola": [
+    {
+      "id": 1,
+      "nome": "Halley"
+    },
+    {
+      "id": 2,
+      "nome": "Cruz credo"
+    }
+  ],
   "turma": []
 }

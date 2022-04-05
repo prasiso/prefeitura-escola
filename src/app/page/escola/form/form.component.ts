@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EscolaService } from '../../../service/';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -7,37 +9,74 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  constructor(private rotaAtual: ActivatedRoute) {}
-  bread: any[] = [];
-  buttons: any[] = [];
+  constructor(
+    private rotaAtual: ActivatedRoute,
+    private rota: Router,
+    private serviceEscola: EscolaService
+  ) {}
+  bread: any[] = [
+    {
+      text: 'Escola',
+    },
+    {
+      text: 'Formulario',
+      color: 'gray',
+    },
+  ];
+  buttons: any[] = [
+    {
+      text: 'Voltar',
+      color: 'warning',
+      link: '/escola',
+    },
+  ];
+  id_backup: number = 0;
   opcao: string = 'A';
   dados: any = { id: '', nome: '' };
-  variavel() {
-    this.bread = [
-      {
-        text: 'Escola',
-      },
-      {
-        text: 'Formulario',
-        color: 'gray',
-      },
-    ]
-      this.buttons = [
-        {
-          text: 'Voltar',
-          color: 'warning',
-          link: '/escola',
-        },
-      ];
+  async EditarOuAdicionar() {
+    const id = Number(this.rotaAtual.snapshot.paramMap.get('id'));
+    if (id !== 0) {
+      await this.loadEscola(id);
+      this.opcao = 'E';
+    }
   }
-  EditarOuAdicionar(){
-    const id = this.rotaAtual.snapshot.paramMap.get('id')
-    if(id !== '0'){
-      this.opcao = 'E'
+  async loadEscola(id: number) {
+    const x = await this.serviceEscola.getId(id);
+    this.id_backup = x.id
+    this.dados = x;
+  }
+  async gravar(dados: any) {
+    if (!dados.nome) {
+      Swal.fire({
+        title: 'Campo vazio',
+        text: 'Campo nome vazio',
+        icon: 'warning',
+      });
+      return;
+    }
+    if(this.opcao === 'A'){
+      dados.id = (await this.serviceEscola.listAll()).length + 1
+      var resp = await this.serviceEscola.post(dados);
+    } else {
+      dados.id = this.id_backup
+      resp = await this.serviceEscola.update(dados);
+      
+    }
+    if (resp.status == 200) {
+      Swal.fire({
+        title: 'Adicionado com Sucesso',
+        icon: 'success',
+      });
+      this.rota.navigate([`/escola`]);
+    } else {
+      Swal.fire({
+        title: resp.texto,
+        icon: 'error',
+      });
+      return
     }
   }
   ngOnInit(): void {
-    this.variavel()
-    this.EditarOuAdicionar()
+    this.EditarOuAdicionar();
   }
 }

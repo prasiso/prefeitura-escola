@@ -31,9 +31,42 @@ export class EscolaService {
           .delete<any | any[]>(`${this.urlEscola}/${id}`)
           .toPromise();
       } else {
-        return {status:400, text:"Foi encontrado Turma, nessa Escola"}
+        return { status: 400, text: 'Foi encontrado Turma, nessa Escola' };
       }
       return resp;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async getId(id: number) {
+    try {
+      const get = await this.http
+        .get<any | any[]>(`${this.urlEscola}/${id}`)
+        .toPromise();
+      return get;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async post(dados: object) {
+    try {
+      debugger
+      const post = await this.http
+        .post<any | any[]>(`${this.urlEscola}`, dados)
+        .toPromise();
+        post.status = 200
+      return post;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async update(dados: any) {
+    try {
+      const update = await this.http
+        .put<any | any[]>(`${this.urlEscola}/${dados.id}`, dados)
+        .toPromise();
+        update.status = 200
+      return update;
     } catch (error) {
       console.log(error);
     }

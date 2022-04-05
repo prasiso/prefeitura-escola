@@ -11,40 +11,34 @@
   ],
   "turma": [
     {
-      "id":1,
-      "idEscola":1,
-      "nome":"Turma A1"
+      "id": 1,
+      "idEscola": 1,
+      "nome": "Turma A1"
     },
     {
-      "id":2,
-      "idEscola":1,
-      "nome":"Turma A2"
+      "id": 2,
+      "idEscola": 1,
+      "nome": "Turma A2"
     },
     {
-      "id":3,
-      "idEscola":1,
-      "nome":"Turma A3"
+      "id": 3,
+      "idEscola": 1,
+      "nome": "Turma A3"
     },
     {
-      "id":4,
-      "idEscola":1,
-      "nome":"Turma A4"
+      "id": 5,
+      "idEscola": 2,
+      "nome": "Turma B1"
     },
     {
-      "id":5,
-      "idEscola":2,
-      "nome":"Turma B1"
+      "id": 6,
+      "idEscola": 2,
+      "nome": "Turma B2"
     },
     {
-      "id":6,
-      "idEscola":2,
-      "nome":"Turma B2"
-    },
-    {
-      "id":7,
-      "idEscola":2,
-      "nome":"Turma B3"
+      "id": 7,
+      "idEscola": 2,
+      "nome": "Turma B3"
     }
-
   ]
 }

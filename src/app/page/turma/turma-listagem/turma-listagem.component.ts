@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TurmaService } from '../../../service/';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-turma-listagem',
@@ -55,7 +56,21 @@ export class TurmaListagemComponent implements OnInit {
     });
   }
   deleteForm(log: any) {
-    console.log(log);
+    Swal.fire({
+      title: 'Deseja excluir?',
+      text: 'Não pode reverter',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await this.serviceTurma.delete(log.id);
+        Swal.fire('Deletado!', 'Turma deletada', 'success');
+        await this.loadTurma(this.escola);
+      }
+    });
   }
   editarForm(log: any) {
     this.route.navigate([`/turma-formulario/${log.id}`]);

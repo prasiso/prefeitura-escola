@@ -26,7 +26,7 @@ export class SelectEscolaComponent implements OnInit {
     results.map((result: any) => {
       result.text = result.nome;
     });
-    debugger
+    
     this.escolas = results;
   }
   ngOnInit(): void {

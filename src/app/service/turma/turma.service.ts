@@ -10,10 +10,11 @@ export class TurmaService {
   private url = `${env.url}` || '';
   resposta = {};
   constructor(private http: HttpClient) {}
-  async listAll() {
+  async listAll(id: any) {
     try {
+      
       const resp = await this.http
-        .get<any | any[]>(`${this.urlTurma}`)
+        .get<any | any[]>(`${this.urlTurma}?idEscola=${id}`)
         .toPromise();
       return resp;
     } catch (error) {
@@ -42,7 +43,7 @@ export class TurmaService {
       const respTurma = await this.http
         .get<any | any[]>(`${this.url}turma?idEscola=${id}`)
         .toPromise();
-        debugger
+        
         for (const resp of respTurma) {
           await this.http
           .delete<any | any[]>(`${this.urlTurma}/${resp.id}`)

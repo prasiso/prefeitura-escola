@@ -22,7 +22,7 @@ export class EscolaService {
   }
   async delete(id: number) {
     try {
-      debugger;
+      ;
       const respTurma = await this.http
         .get<any | any[]>(`${this.url}turma?idEscola=${id}`)
         .toPromise();
@@ -50,7 +50,7 @@ export class EscolaService {
   }
   async post(dados: object) {
     try {
-      debugger
+      
       const post = await this.http
         .post<any | any[]>(`${this.urlEscola}`, dados)
         .toPromise();

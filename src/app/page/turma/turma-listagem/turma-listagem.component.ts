@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TurmaService } from '../../../service/';
 
 @Component({
   selector: 'app-turma-listagem',
@@ -11,14 +12,24 @@ export class TurmaListagemComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private route: Router,
-    private rotaAtual: ActivatedRoute
+    private rotaAtual: ActivatedRoute,
+    private serviceTurma: TurmaService
   ) {}
   closeResult: string = '';
   rows: any[] = [];
   rowsBackup: any[] = [];
   dados: any = {};
   escola: number = 1;
-  columns: any[] = [];
+  columns: any[] = [
+    {
+      label: 'Identificador',
+      key: 'id',
+    },
+    {
+      label: 'Nome',
+      key: 'nome',
+    },
+  ];
   buttons: any[] = [
     {
       text: 'Adicionar',
@@ -49,48 +60,13 @@ export class TurmaListagemComponent implements OnInit {
   editarForm(log: any) {
     this.route.navigate([`/turma-formulario/${log.id}`]);
   }
- async loadTurma(idEscola: number) {
-    if (this.rowsBackup.length == 0 && this.rows.length>0) {
-      this.rowsBackup = this.rows;
-    } else{
-      await this.variaveis()
-      this.rowsBackup = this.rows
-    }
-    const dadosBackup = this.rowsBackup;
-    if (idEscola != 0) {
-      this.rows = dadosBackup.filter((x) => x.idEscola == idEscola);
-    }
-  }
-  variaveis() {
-    this.rows = [
-      {
-        id: 1,
-        idEscola: 1,
-        nome: 'Kelwin de Souza',
-      },
-      {
-        id: 2,
-        idEscola: 1,
-        nome: 'Patricia de Souza',
-      },
-    ];
-    this.columns = [
-      {
-        label: 'Identificador',
-        key: 'id',
-      },
-      {
-        label: 'Nome',
-        key: 'nome',
-      },
-    ];
+  async loadTurma(idEscola: number) {
+    const result = await this.serviceTurma.listAll(idEscola);
+    this.rows = result;
   }
   async ngOnInit() {
     const id = Number(this.rotaAtual.snapshot.paramMap.get('id'));
-    this.escola = id
-    if(id !==0){
-      await this.variaveis();
-    }
+    this.escola = id;
     this.loadTurma(id);
   }
 }

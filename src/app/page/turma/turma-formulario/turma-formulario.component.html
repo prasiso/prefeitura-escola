@@ -4,8 +4,8 @@
     <div class="card">
         <div class="card-body">
             <app-lista [canListagem]="false" [buttons]="buttons"></app-lista>
-            <div class="row">
-                <div class="col-5" *ngIf="this.opcao === 'E'">
+            <div class="row" *ngIf="this.opcao === 'E'">
+                <div class="col-5" >
                     <label>Identificador</label>
                     <input disabled class="form-control" type="text" [(ngModel)]="dados.id" placeholder="Identificador">
                 </div>
@@ -14,7 +14,7 @@
                 <div class="col-5">
                     <app-select-escola (change)="loadButtons(escola)" [canInativar]="this.opcao === 'E'?true:false" [(dado)]="escola"></app-select-escola>
                 </div>
-                <div class="col-{{this.opcao === 'E'?7:9}}">
+                <div class="col-7">
                     <label>Nome</label>
                     <input class="form-control" type="text" [(ngModel)]="dados.nome" placeholder="Nome">
                 </div>

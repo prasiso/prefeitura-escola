@@ -5,11 +5,5 @@
       "nome": "Kelwin"
     }
   ],
-  "turma": [
-    {
-      "id": "a301b12a-e812-4c62-99de-34c1d5a696f5",
-      "nome": "Turma 123",
-      "idEscola": "0e8af16f-0c3d-4aed-8e9e-c5d998b09241"
-    }
-  ]
+  "turma": []
 }

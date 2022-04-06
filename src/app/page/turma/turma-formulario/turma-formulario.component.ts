@@ -72,7 +72,7 @@ export class TurmaFormularioComponent implements OnInit {
       return;
     }
     dados.idEscola = this.escola;
-    if (!dados.idEscola) {
+    if (!dados.idEscola || dados.idEscola == '0') {
       Swal.fire({
         title: 'Campo vazio',
         text: 'Campo Turma vazio',

@@ -73,7 +73,7 @@ export class ListaComponent implements OnInit, OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     debugger
-    if (changes.rows.currentValue !==changes.rows.previousValue) {
+    if (changes.rows?.currentValue !==changes.rows?.previousValue) {
       this.rowsArrayFunction()
     }
   }

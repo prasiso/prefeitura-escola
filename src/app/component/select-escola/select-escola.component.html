@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Selecionar Turma:</label>
+    <div *ngIf = "canInativar">
+        <select disabled class="form-control" [(ngModel)]="dado" id="exampleFormControlSelect1">
+            <option *ngFor="let escola of escolas" value="{{escola.id}}">{{escola.text}}</option>
+        </select>
+    </div>
+    <div *ngIf = "!canInativar">
+        <select  class="form-control" [(ngModel)]="dado" id="exampleFormControlSelect1">
+            <option *ngFor="let escola of escolas" value="{{escola.id}}">{{escola.text}}</option>
+        </select>
+    </div>
+</div>

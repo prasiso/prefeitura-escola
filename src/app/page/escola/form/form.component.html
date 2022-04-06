@@ -5,11 +5,11 @@
         <div class="card-body">
             <app-lista [canListagem]="false" [buttons]="buttons"></app-lista>
             <div class="row">
-                <div class="col-2"  *ngIf="this.opcao === 'E'">
+                <div class="col-4"  *ngIf="this.opcao === 'E'">
                     <label>Identificador</label>
                     <input disabled class="form-control form-control-sm" type="text" [(ngModel)]="dados.id" placeholder="Identificador">
                 </div>
-                <div class="col-{{this.opcao === 'E'?10:12}}">
+                <div class="col-{{this.opcao === 'E'?8:12}}">
                     <label>Nome</label>
                     <input class="form-control form-control-sm" type="text" [(ngModel)]="dados.nome" placeholder="Nome">
                 </div>

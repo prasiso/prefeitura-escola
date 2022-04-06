@@ -58,7 +58,7 @@ export class TurmaService {
     }
   }
 
-  async getId(id: number) {
+  async getId(id: string) {
     try {
       const get = await this.http
         .get<any | any[]>(`${this.urlTurma}/${id}`)

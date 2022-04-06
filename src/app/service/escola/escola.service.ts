@@ -38,7 +38,7 @@ export class EscolaService {
       console.log(error);
     }
   }
-  async getId(id: number) {
+  async getId(id: string) {
     try {
       const get = await this.http
         .get<any | any[]>(`${this.urlEscola}/${id}`)

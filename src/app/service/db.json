@@ -1,39 +1,15 @@
 {
   "escola": [
     {
-      "id": 1,
-      "nome": "Halley"
-    },
-    {
-      "id": 2,
-      "nome": "Escola Nova"
+      "id": "0e8af16f-0c3d-4aed-8e9e-c5d998b09241",
+      "nome": "Kelwin"
     }
   ],
   "turma": [
     {
-      "id": 1,
-      "idEscola": 1,
-      "nome": "Turma A1"
-    },
-    {
-      "id": 2,
-      "idEscola": 1,
-      "nome": "Turma A2"
-    },
-    {
-      "id": 3,
-      "idEscola": 1,
-      "nome": "Turma A3"
-    },
-    {
-      "id": 4,
-      "nome": "Turma A4",
-      "idEscola": "1"
-    },
-    {
-      "id": 5,
-      "nome": "Turma A5",
-      "idEscola": "1"
+      "id": "a301b12a-e812-4c62-99de-34c1d5a696f5",
+      "nome": "Turma 123",
+      "idEscola": "0e8af16f-0c3d-4aed-8e9e-c5d998b09241"
     }
   ]
 }

@@ -10,10 +10,9 @@ export class SelectEscolaComponent implements OnInit {
   constructor(private serviceEscola: EscolaService) {}
 
   escolas: any[] = [];
-  dadoSelect: number = 0;
+  dadoSelect: string = '';
   @Input() canInativar: boolean = false;
-  @Output()
-  dadoChange = new EventEmitter<any>();
+  @Output() dadoChange = new EventEmitter<any>();
   @Input() get dado() {
     return this.dadoSelect;
   }
@@ -26,7 +25,7 @@ export class SelectEscolaComponent implements OnInit {
     results.map((result: any) => {
       result.text = result.nome;
     });
-    
+
     this.escolas = results;
   }
   ngOnInit(): void {

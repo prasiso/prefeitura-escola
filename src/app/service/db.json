@@ -1,10 +1,60 @@
 {
-  "escola": [],
+  "escola": [
+    {
+      "id": "ba0756b8-2291-4de0-9834-b893f1728e7f",
+      "nome": "Halley"
+    },
+    {
+      "id": "7d8873eb-e6eb-4998-b71e-b523d445be2f",
+      "nome": "Aprender"
+    },
+    {
+      "id": "a2800ca5-5e03-4fea-b52f-03b87706309c",
+      "nome": "Aprender e Cia"
+    },
+    {
+      "id": "323b69cc-bb05-452d-b266-22ad9ad0680d",
+      "nome": "Arte de Aprender"
+    },
+    {
+      "id": "5c418072-2571-4b82-a085-8bca065fa5da",
+      "nome": "Arte de Conhecer"
+    },
+    {
+      "id": "19235e5a-f39d-41e2-a9a1-84aa9c66c68a",
+      "nome": "Arte do Conhecimento"
+    },
+    {
+      "id": "8d2ade5c-29c3-40bc-929a-904a900606ea",
+      "nome": "Arte do Saber"
+    },
+    {
+      "id": "19e29784-b33e-4a53-a97f-8e4c1b87e8a2",
+      "nome": "Caminho do Saber"
+    },
+    {
+      "id": "f78afe04-61d2-43c3-81bb-8eb22e5e16ae",
+      "nome": "Caminhos do Crescer"
+    },
+    {
+      "id": "d4efaa81-3623-48e5-98ce-669909f5d1d3",
+      "nome": "Ciranda do Saber"
+    },
+    {
+      "id": "cdf89e26-2185-44f1-af2d-f61e4669e535",
+      "nome": "Educar "
+    }
+  ],
   "turma": [
     {
       "id": "c2fe2713-0046-42e9-9c0c-e6801f8d0df6",
       "nome": "teste",
       "idEscola": "0"
+    },
+    {
+      "id": "630271f6-aa18-4ee0-884b-432c3ace79b7",
+      "nome": "Turma A1",
+      "idEscola": "ba0756b8-2291-4de0-9834-b893f1728e7f"
     }
   ]
 }

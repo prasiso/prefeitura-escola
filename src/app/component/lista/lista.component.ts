@@ -59,7 +59,7 @@ export class ListaComponent implements OnInit, OnChanges {
   rowsArrayFunction() {
     if (this.rows.length > 0) {
       var arraySeparado = this.separar(this.rows, 5);
-      debugger
+      // debugger
       this.rowsArray = arraySeparado
       this.rowsPaginacao = arraySeparado[0];
     }
@@ -72,7 +72,7 @@ export class ListaComponent implements OnInit, OnChanges {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
-    debugger
+    // debugger
     if (changes.rows?.currentValue !==changes.rows?.previousValue) {
       this.rowsArrayFunction()
     }

@@ -57,11 +57,13 @@ export class ListaComponent implements OnInit, OnChanges {
     }, []);
   };
   rowsArrayFunction() {
-    if (this.rows.length > 0) {
+    if (this.rows?.length > 0) {
       var arraySeparado = this.separar(this.rows, 5);
       // debugger
       this.rowsArray = arraySeparado
       this.rowsPaginacao = arraySeparado[0];
+    } else{
+      this.rowsPaginacao =[]
     }
   }
   mudarPagina(pagina: number){
@@ -72,9 +74,6 @@ export class ListaComponent implements OnInit, OnChanges {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
-    // debugger
-    if (changes.rows?.currentValue !==changes.rows?.previousValue) {
       this.rowsArrayFunction()
-    }
   }
 }

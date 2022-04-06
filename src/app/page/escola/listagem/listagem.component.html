@@ -22,7 +22,16 @@
     </ng-template>
     <div class="card">
         <div class="card-body">
-            <app-lista [rows]="rows" [columns]="columns" [buttons]="buttons" (ver)="verForm($event, content)" (delete)="deleteForm($event)" (editar)="editarForm($event)" (lista)="listaForm($event)"></app-lista>
+            <app-lista 
+            [rows]="rows"
+             [columns]="columns" 
+             [buttons]="buttons" 
+             (ver)="verForm($event, content)" 
+             (filtro)="filtroForm($event)" 
+             (delete)="deleteForm($event)" 
+             (editar)="editarForm($event)" 
+             (lista)="listaForm($event)"
+             ></app-lista>
         </div>
     </div>
 

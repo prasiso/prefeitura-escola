@@ -54,6 +54,9 @@ export class ListagemComponent implements OnInit {
       size: 'lg',
     });
   }
+  filtroForm(log: any){
+    this.loadInicio(log)
+  }
   async deleteForm(log: any) {
     Swal.fire({
       title: 'Deseja excluir?',
@@ -99,8 +102,8 @@ export class ListagemComponent implements OnInit {
   editarForm(log: any) {
     this.route.navigate([`/escola/${log.id}`]);
   }
-  async loadInicio() {
-    const x = await this.serviceEscola.listAll();
+  async loadInicio(filtro?:string) {
+    const x = await this.serviceEscola.listAll(filtro?filtro:'');
     this.rows = x;
   }
   ngOnInit(): void {

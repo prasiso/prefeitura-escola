@@ -10,10 +10,10 @@ export class EscolaService {
   private url = `${env.url}` || '';
   resposta = {};
   constructor(private http: HttpClient) {}
-  async listAll() {
+  async listAll(filtros?:string) {
     try {
       const resp = await this.http
-        .get<any | any[]>(`${this.urlEscola}`)
+        .get<any | any[]>(`${this.urlEscola}?${filtros}`)
         .toPromise();
       return resp;
     } catch (error) {

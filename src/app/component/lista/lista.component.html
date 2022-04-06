@@ -14,8 +14,12 @@
                     <th scope="col">Ação</th>
                 </tr>
                 <tr>
-                    <th scope="col" *ngFor="let column of columns"> 
-                        <input (change)="mudancaFiltro()" class="form-control form-control-sm" type="text" [(ngModel)]="filtroComponent[column.key]"   placeholder="Filtro de {{column.label}}">
+                    <th scope="col" *ngFor="let column of columns">
+                        <input  class="form-control form-control-sm" type="text" [(ngModel)]="filtroComponent[column.key]" placeholder="Filtro de {{column.label}}">
+                    </th>
+                    <th>
+                        <button (click)="mudancaFiltro()" class="btn btn-primary btn-sm m-1">Pesquisar</button>
+                        <button (click)="limparFiltro()" *ngIf="filtroBollean" class="btn btn-danger btn-sm m-1">Excluir</button>
                     </th>
                 </tr>
             </thead>
@@ -36,11 +40,11 @@
             </tbody>
 
         </table>
-        <div class="container" *ngIf = "this.rowsArray.length>1">
+        <div class="container" *ngIf="this.rowsArray.length>1">
             <div class="row justify-content-center">
                 <nav aria-label="...">
                     <ul class="pagination pagination-sm">
-                        <li  class="page-item {{i + 1 === this.numberPagina?'active':''}}" *ngFor="let item of rowsArray; let i = index" (click)="mudarPagina(i)"><a class="page-link">{{i + 1}}</a></li>
+                        <li class="page-item {{i + 1 === this.numberPagina?'active':''}}" *ngFor="let item of rowsArray; let i = index" (click)="mudarPagina(i)"><a class="page-link">{{i + 1}}</a></li>
 
                         <!-- <li class="page-item active" aria-current="page">
                             <span class="page-link">1</span>

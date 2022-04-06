@@ -18,6 +18,7 @@ export class ListaComponent implements OnInit, OnChanges {
   rowsArray: any[] = [];
   numberPagina: number = 1;
   filtroComponent: any = {};
+  filtroBollean: boolean = false;
   //Dados
   @Input() rows!: any[];
   @Input() columns!: any[];
@@ -46,7 +47,14 @@ export class ListaComponent implements OnInit, OnChanges {
         ? (filtroString += `&${key}_like=${value}`)
         : (filtroString = `${key}_like=${value}`);
     }
+    if(filtroString.length>0)
+    this.filtroBollean = true
     this.filtro.emit(filtroString)
+  }
+  limparFiltro(){
+    this.filtroComponent = {}
+    this.filtroBollean = false
+    this.filtro.emit("")
   }
   verFuncao(log: any) {
     this.ver.emit(log);

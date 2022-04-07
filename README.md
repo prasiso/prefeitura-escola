@@ -1,27 +1,18 @@
 # PrefeituraEscola
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+Esse projeto foi gerado em  [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Rode `npm run dev` para o dev server que consiste na api local. Navegue ate `http://localhost:4200/`. O app vai automaticamente fazer o reload se voce mudar qualquer coisa nos arquvivos
 
-## Code scaffolding
+## Prod server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Rode `npm run prod` para o prod server que consiste na api hospedada. Navegue ate `http://localhost:4200/`. O app vai automaticamente fazer o reload se voce mudar qualquer coisa nos arquvivos
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Rode `npm run build-prod` para o prod server que consiste na api hospedada. Navegue ate `http://localhost:4200/`. O app vai automaticamente fazer o reload se voce mudar qualquer coisa nos arquvivos
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -49,6 +49,7 @@ export class FormComponent implements OnInit {
     this.dados = x;
   }
   async gravar(dados: any) {
+    const op = this.opcao
     if (!dados.nome) {
       Swal.fire({
         title: 'Campo vazio',
@@ -57,7 +58,7 @@ export class FormComponent implements OnInit {
       });
       return;
     }
-    if(this.opcao === 'A'){
+    if( op === 'A'){
       dados.id = this.id
       var resp = await this.serviceEscola.post(dados);
     } else {
@@ -67,7 +68,7 @@ export class FormComponent implements OnInit {
     }
     if (resp.status == 200) {
       Swal.fire({
-        title: 'Adicionado com Sucesso',
+        title: `${op === 'A'?'Adicionado':'Atualizado'} com Sucesso`,
         icon: 'success',
       });
       this.rota.navigate([`/escola`]);

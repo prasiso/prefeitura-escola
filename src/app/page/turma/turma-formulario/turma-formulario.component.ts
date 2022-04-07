@@ -63,6 +63,7 @@ export class TurmaFormularioComponent implements OnInit {
     this.loadButtons(resp.idEscola)
   }
   async gravar(dados: any) {
+    const op = this.opcao
     if (!dados.nome) {
       Swal.fire({
         title: 'Campo vazio',
@@ -89,7 +90,7 @@ export class TurmaFormularioComponent implements OnInit {
     }
     if (resp.status == 200) {
       Swal.fire({
-        title: 'Adicionado com Sucesso',
+        title: `${op === 'A'?'Adicionado':'Atualizado'} com Sucesso`,
         icon: 'success',
       });
       this.rota.navigate([`/turma-listagem/${this.escola}`]);

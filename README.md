@@ -10,9 +10,6 @@ Rode `npm run dev` para o dev server que consiste na api local. Navegue ate `htt
 
 Rode `npm run prod` para o prod server que consiste na api hospedada. Navegue ate `http://localhost:4200/`. O app vai automaticamente fazer o reload se voce mudar qualquer coisa nos arquvivos
 
-## Build
-
-Rode `npm run build-prod` para o prod server que consiste na api hospedada. Navegue ate `http://localhost:4200/`. O app vai automaticamente fazer o reload se voce mudar qualquer coisa nos arquvivos
 
 ## Build
 

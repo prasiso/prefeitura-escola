@@ -7,10 +7,6 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'prefeituraEscola';
   constructor() {}
-  rows: any[] = [];
-  bread: any[] = [];
-  columns: any[] = [];
-  buttons: any[] = [];
   ngOnInit(): void {
     // this.route.navigate([`/escola`])
   }
